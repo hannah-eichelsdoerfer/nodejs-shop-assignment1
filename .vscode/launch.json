@@ -1,0 +1,19 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\app.js",
+      "restart": true,
+      "runtimeExecutable": "nodemon", // So always starts with app.js (to start server), no matter which file is currently open
+      // Need to use this if using Nodemon because it's a separate process from debugger and have to quit it with Ctrl C, which couldn't be done in debug console, so it's necessary to funnel it to integrated terminal, normal VS Code terminal
+      "console": "integratedTerminal" // Have to have Nodemon installed globally for this
+    }
+  ]
+}
